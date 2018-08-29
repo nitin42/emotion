@@ -88,6 +88,16 @@ it('works with functions in tagged template literals', () => {
   ).toEqual({ color: 'hotpink' })
 })
 
+test('should ignore comments', () => {
+  const styles = css`
+    font-size: 20px;
+    /* Use Flexbox like this
+    flex: 1; */
+  `
+
+  expect(styles).toEqual({ fontSize: 20 })
+})
+
 test('last arg falsy and string before that', () => {
   expect(css('color:hotpink;', false)).toEqual({ color: 'hotpink' })
 })

@@ -12,6 +12,18 @@ exports[`Emotion primitives primitive should work with \`withComponent\` 1`] = `
 </Text>
 `;
 
+exports[`Emotion primitives should ignore comments 1`] = `
+<View
+  size="20px"
+  style={
+    Object {
+      "color": "red",
+      "fontSize": 20,
+    }
+  }
+/>
+`;
+
 exports[`Emotion primitives should pass props in withComponent 1`] = `
 <View
   color="green"

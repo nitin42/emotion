@@ -165,6 +165,19 @@ describe('Emotion primitives', () => {
     expect(treeTwo).toMatchSnapshot()
   })
 
+  it('should ignore comments', () => {
+    const Container = styled.View`
+      color: red;
+      /* This test case should ignore this comment and generate style object with only color property ?
+      grid-template-columns: 2fr 2fr; */
+      font-size: ${props => props.size};
+    `
+
+    const tree = renderer.create(<Container size="20px" />).toJSON()
+
+    expect(tree).toMatchSnapshot()
+  })
+
   it('should render <Image />', () => {
     const Image = styled.Image`
       border: 2px solid hotpink;
