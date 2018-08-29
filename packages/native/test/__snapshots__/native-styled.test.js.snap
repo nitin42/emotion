@@ -13,6 +13,19 @@ exports[`Emotion native styled primitive should work with \`withComponent\` 1`] 
 </Text>
 `;
 
+exports[`Emotion native styled should ignore comments 1`] = `
+<Text
+  color="red"
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  Hello World
+</Text>
+`;
+
 exports[`Emotion native styled should pass props in withComponent 1`] = `
 <View
   color="green"

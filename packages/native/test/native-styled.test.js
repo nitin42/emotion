@@ -52,6 +52,17 @@ describe('Emotion native styled', () => {
     expect(tree).toMatchSnapshot()
   })
 
+  it('should ignore comments', () => {
+    const Text = styled.Text`
+      color: ${props => props.color};
+      /* Some comments font-size: 20px; */
+    `
+
+    const tree = renderer.create(<Text color="red">Hello World</Text>).toJSON()
+
+    expect(tree).toMatchSnapshot()
+  })
+
   test('should render the primitive on changing the props', () => {
     const Text = styled.Text({ padding: '20px' }, props => ({
       color: props.decor

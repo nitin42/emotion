@@ -90,6 +90,14 @@ describe('Emotion native css', () => {
     ).toEqual({ color: 'hotpink' })
   })
 
+  it('should ignore comments', () => {
+    expect(
+      css`
+        color: red; /* Some comments flex: 1; */
+      `
+    ).toEqual({ color: 'red' })
+  })
+
   test('last arg falsy and string before that', () => {
     expect(css('color:hotpink;', false)).toEqual({ color: 'hotpink' })
   })
